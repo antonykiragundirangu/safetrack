@@ -1,16 +1,37 @@
-# safetrack
+# SafeTrack
 
-A new Flutter project.
+Flutter starter project for SafeTrack. The current app is the Flutter counter
+demo, with a widget test that checks the increment button. Tracking features
+have not been implemented yet.
 
-## Getting Started
+## Run locally
 
-This project is a starting point for a Flutter application.
+Install the [Flutter SDK](https://docs.flutter.dev/install), then run:
 
-A few resources to get you started if this is your first Flutter project:
+```sh
+git clone https://github.com/antonykiragundirangu/safetrack.git
+cd safetrack
+flutter pub get
+flutter run -d chrome
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+The automated checks use Flutter 3.44.8. Run `flutter doctor` to check your local
+toolchain and `flutter devices` to list available targets. Android, iOS, desktop,
+and web platform folders are included; native builds require their platform
+toolchains and have not been validated by the checks below.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Check changes
+
+```sh
+dart format --output=none --set-exit-if-changed lib test
+flutter analyze
+flutter test
+```
+
+GitHub Actions runs these checks for pull requests and pushes to `main`. Start
+each improvement on a branch and open a pull request with a description of the
+change and its test results.
+
+Local SDK paths, build output, environment files, and signing credentials are
+excluded from Git. Commit `pubspec.lock` when dependency resolution changes so
+other contributors can use the same package versions.
